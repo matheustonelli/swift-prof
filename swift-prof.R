@@ -157,12 +157,12 @@ server <- function(input, output) {
 })
   
   #Download plot
-  output$down <- downloadHandler(
+  output$downloadButton <- downloadHandler(
     filename = function(){
-      paste(input$scriptId,input$var3,sep=".")
+      paste(input$scriptId,input$downloadFormatt,sep=".")
     },
   content = function(file){
-    if(input$var3 == "png")
+    if(input$downloadFormatt == "png")
       png(file)
       else
       pdf(file)
